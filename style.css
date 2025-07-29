@@ -1,0 +1,98 @@
+body{
+    background-color: lemonchiffon;
+}
+#starterh1{
+    text-align: center;
+    
+}
+#gameGround{
+    display: flex;
+    justify-content: space-evenly;
+}
+ 
+.yourSideItem{
+    display: block;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    background-size : contain;
+    cursor: pointer;
+}
+.yourSideItem:hover{
+    opacity: 0.7;
+}
+.compSideItem{
+    display: block;
+    border-radius: 50%;
+    height: 110px;
+    width: 110px;
+    background-size : contain;
+    border: 2px black solid;
+}
+#yourRock{
+    background-image: url("images/rock.jpeg");
+}
+#yourPaper{
+    background-image: url("images/paper.jpeg");
+}
+#yourSizzor{
+    background-image: url("images/scissor.jpeg");
+}
+#compRock{
+    background-image: url("images/rock.jpeg");
+    transform: scaleX(-1);
+}
+#compPaper{
+    background-image: url("images/paper.jpeg");
+    transform: scaleX(-1);
+}
+#compSizzor{
+    background-image: url("images/scissor.jpeg");
+    transform: scaleX(-1);
+}
+#scoreboard{
+    text-align: center;
+    background-color: wheat;
+    height: 101px;
+    width: 400px;
+}
+#YourScore{
+    line-height: 50px;
+    font-size: larger;
+}
+#CompScore{
+    line-height: 50px;
+    font-size: larger;
+}
+#outerscoreboard{
+    display: flex;
+    justify-content: center;
+}
+
+
+#compScoreno,#yourScoreno,#terascore,#compkascore{
+    display: inline;
+}
+#result{
+   text-align: center;
+   line-height: 100px;
+   background-color: wheat;
+   width: 20rem;
+   border-radius: 50%;
+}
+.resultdiv{
+    display: flex;
+    justify-content: center;
+    background-color: lemonchiffon;
+}
+.resultwin{
+    background-color: green;
+    font-size: 100px;
+}
+.resultloose{
+    background-color: red;
+}
+.resultdraw{
+    background-color: yellow;
+    
+}
