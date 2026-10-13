@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Games</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <meta name="description" content="A fun, animated Rock Paper Scissors game. Challenge the computer and chase the high score.">
+  <title>Rock Paper Scissors — Hand Showdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Hand Showdown home"><span class="brand-mark">✊</span><span>HAND<span class="brand-accent">SHOWDOWN</span></span></a>
+      <div class="live-pill"><span class="live-dot"></span> PLAYER VS COMPUTER</div>
+    </header>
 
-    <h1 id="starterh1">Welcome to Classic Games</h1>
-    <div id="gameGround">
-        <div id="yourSide">
-            <button id="yourRock" class="yourSideItem"></button><br>
-            <button id="yourPaper" class="yourSideItem"></button><br>
-            <button id="yourSizzor" class="yourSideItem"></button><br>
-        </div>
+    <section class="intro">
+      <p class="eyebrow">THE CLASSIC. REIMAGINED.</p>
+      <h1>Ready, <span>set,</span> throw!</h1>
+      <p class="subtitle">Choose your move. Read your rival. Own the round.</p>
+    </section>
 
-        <div id="compSide">
-            <img src="" id="compRock" class="compSideItem"><br>
-            <img src="" id="compPaper" class="compSideItem"><br>
-            <img src="" id="compSizzor" class="compSideItem"><br>
+    <section class="arena" aria-label="Game arena">
+      <div class="player-panel">
+        <div class="player-heading"><div class="avatar avatar-player">YOU</div><div><h2>You</h2><p>Your next move</p></div></div>
+        <div class="hand-stage player-stage" id="playerStage">
+          <div class="stage-glow"></div>
+          <div class="hand-emoji player-hand" id="playerHand" aria-label="Your move">✊</div>
+          <span class="stage-caption" id="playerCaption">PICK YOUR MOVE</span>
         </div>
-    </div>
-    <div id="outerscoreboard">
-        <div id="scoreboard">
-            <div id="YourScore">
-                <p id="terascore">your score is = </p>
-                <p id="yourScoreno">0</p>
-            </div>
-            <div id="CompScore">
-                <p id="compkascore"> computer score is = </p>
-                <p id="compScoreno">0</p>
-            </div>
-        </div>
-    </div>
-    <div class="resultdiv">
-        <p id="result">Result</p>
-    </div>
-   
+      </div>
 
-    <script src="script.js"></script>
+      <div class="versus" aria-hidden="true"><span>VS</span><i></i></div>
+
+      <div class="player-panel computer-panel">
+        <div class="player-heading"><div class="avatar avatar-computer">CPU</div><div><h2>CPU Rival</h2><p>Always ready</p></div></div>
+        <div class="hand-stage computer-stage" id="computerStage">
+          <div class="stage-glow"></div>
+          <div class="hand-emoji computer-hand" id="computerHand" aria-label="Computer move">✊</div>
+          <span class="stage-caption" id="computerCaption">WAITING FOR YOU</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="choice-section" aria-label="Choose your move">
+      <p class="choice-label">MAKE YOUR MOVE</p>
+      <div class="choices">
+        <button class="choice-button" data-move="rock" aria-label="Choose rock">
+          <span class="choice-emoji">✊</span><span class="choice-name">Rock</span><span class="choice-hint">Crushes scissors</span>
+        </button>
+        <button class="choice-button" data-move="paper" aria-label="Choose paper">
+          <span class="choice-emoji">✋</span><span class="choice-name">Paper</span><span class="choice-hint">Covers rock</span>
+        </button>
+        <button class="choice-button" data-move="scissors" aria-label="Choose scissors">
+          <span class="choice-emoji">✌️</span><span class="choice-name">Scissors</span><span class="choice-hint">Cuts paper</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="result-card" id="resultCard" aria-live="polite">
+      <div class="result-icon" id="resultIcon">✦</div>
+      <div class="result-copy"><p class="result-kicker" id="resultKicker">YOUR ARENA AWAITS</p><h2 id="resultTitle">It's time to throw down.</h2><p id="resultMessage">Pick rock, paper, or scissors to start the showdown.</p></div>
+      <div class="round-number"><span>ROUND</span><strong id="roundNumber">00</strong></div>
+    </section>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="score-block"><span class="score-label"><span class="score-dot you-dot"></span> YOUR WINS</span><strong id="yourScoreno">0</strong></div>
+      <div class="score-divider"></div>
+      <div class="score-block"><span class="score-label"><span class="score-dot cpu-dot"></span> CPU WINS</span><strong id="compScoreno">0</strong></div>
+      <button class="reset-button" id="resetButton" type="button" aria-label="Reset scores">↻ <span>Reset</span></button>
+    </section>
+    <footer><span>BUILT FOR THE LOVE OF THE GAME</span><span>ROCK · PAPER · SCISSORS</span></footer>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
